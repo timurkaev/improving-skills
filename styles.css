@@ -288,31 +288,4 @@
             font-size: 12px;
             color: var(--color-text-secondary);
             margin-top: var(--space-4);
-        }
-
-        @media (max-width: 600px) {
-            .header h1 {
-                font-size: 24px;
-            }
-
-            .input-section {
-                flex-direction: column;
-            }
-
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-
-            .filters {
-                justify-content: center;
-            }
-
-            .stats {
-                gap: var(--space-12);
-            }
-
-            .stat-value {
-                font-size: 20px;
-            }
-        }
+        } 
