@@ -25,6 +25,20 @@ class TodoApp {
       if (e.key === "Enter") this.handleAddTodo();
     })
 
+    this.ui.getTodoInput().addEventListener("input", (e: Event) => {
+      const target = e.target as HTMLInputElement
+      if (!target.value.trim()) {
+        this.ui.getEmptyError().style.display = "block"
+      } else {
+        this.ui.getEmptyError().style.display = "none"
+      }
+      if (target.value.length > 100) {
+        this.ui.getTooLongError().style.display = "block"
+      } else {
+        this.ui.getTooLongError().style.display = "none"
+      }
+    })
+
     // filters
     this.ui.getFilters().forEach((btn: HTMLButtonElement) => {
       btn.addEventListener('click', () => {
@@ -58,12 +72,12 @@ class TodoApp {
     const text: string = this.ui.getInputValue();
 
     if (!text.trim()) {
-      alert('Пожалуйста введите текст задачи')
+      this.ui.getEmptyError().style.display = 'block'
       return;
     }
 
     if (text.length > 200) {
-      alert("Задача не должна быть длиннее 200 символов")
+      this.ui.getTooLongError().style.display = 'block'
       return;
     }
 

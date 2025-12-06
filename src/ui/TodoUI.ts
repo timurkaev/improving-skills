@@ -13,6 +13,8 @@ export class TodoUI {
     const todoList = document.getElementById('todoList') as HTMLUListElement
     const emptyState = document.getElementById('emptyState') as HTMLDivElement
     const filters = document.querySelectorAll(".filter-btn") as NodeListOf<HTMLButtonElement>
+    const emptyError = document.getElementById("emptyError") as HTMLDivElement
+    const tooLongError = document.getElementById("tooLongError") as HTMLDivElement
 
     if (!todoInput || !addBtn || !todoList || !emptyState) {
       throw new Error("Не найдены необходимые DOM элементы")
@@ -24,6 +26,8 @@ export class TodoUI {
       todoList,
       emptyState,
       filters,
+      emptyError,
+      tooLongError,
       stats: {
         total: document.getElementById('totalCount') as HTMLDivElement,
         active: document.getElementById('activeCount') as HTMLDivElement,
@@ -121,5 +125,13 @@ export class TodoUI {
 
   getFilters(): NodeListOf<HTMLButtonElement> {
     return this.elements.filters
+  }
+
+  getEmptyError(): HTMLDivElement {
+    return this.elements.emptyError
+  }
+
+  getTooLongError(): HTMLDivElement {
+    return this.elements.tooLongError
   }
 }

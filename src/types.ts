@@ -19,6 +19,8 @@ export interface ITodoDOMElements {
   todoList: HTMLUListElement
   emptyState: HTMLDivElement
   filters: NodeListOf<HTMLButtonElement>
+  emptyError: HTMLDivElement
+  tooLongError: HTMLDivElement
   stats: {
     total: HTMLDivElement
     active: HTMLDivElement

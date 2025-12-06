@@ -73,7 +73,13 @@
         .input-section {
             display: flex;
             gap: var(--space-8);
-            margin-bottom: var(--space-24);
+            margin-bottom: var(--space-4);
+        }
+
+        .empty-error, .too-long-error {
+          color: red;
+          font-size: 13px;
+          display: none;
         }
 
         .input-group {
@@ -135,7 +141,7 @@
         .filters {
             display: flex;
             gap: var(--space-8);
-            margin-bottom: var(--space-24);
+            margin: var(--space-24) 0 var(--space-24) 0;
             flex-wrap: wrap;
         }
 
